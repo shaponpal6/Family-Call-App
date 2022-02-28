@@ -1,17 +1,25 @@
 import React from 'react'
-import { StyleSheet } from 'react-native'
-import { Text } from 'react-native-paper'
+import { ImageBackground, StyleSheet, KeyboardAvoidingView, View } from 'react-native'
 import { theme } from '../core/theme'
 
-export default function Header(props) {
-  return <Text style={styles.header} {...props} />
+export default function Header({ children }) {
+  return (
+    <View style={styles.container}>
+        {children}
+    </View>
+  )
 }
 
 const styles = StyleSheet.create({
-  header: {
-    fontSize: 21,
-    color: theme.colors.primary,
-    fontWeight: 'bold',
-    paddingVertical: 12,
+  container: {
+    display: 'flex',
+    width: '100%',
+    maxWidth: 340,
+    padding: 20,
+    flexDirection: 'row',
+    alignSelf: 'center',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    backgroundColor: '#987',
   },
 })
