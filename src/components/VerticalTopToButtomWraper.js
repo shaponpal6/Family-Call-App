@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: '100%',
-    maxWidth: 340,
+    // maxWidth: 340,
     alignSelf: 'center',
     alignItems: 'center',
     justifyContent: 'space-between',

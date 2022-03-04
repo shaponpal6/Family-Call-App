@@ -2,7 +2,7 @@ import React from 'react'
 import { ImageBackground, StyleSheet, KeyboardAvoidingView, View } from 'react-native'
 import { theme } from '../core/theme'
 
-export default function Header({ children }) {
+export default function Footer({ children }) {
   return (
     <View style={styles.container}>
         {children}
@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignSelf: 'center',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
     backgroundColor: '#987',
   },
 })

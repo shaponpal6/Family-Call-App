@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, StatusBar } from 'react-native';
 import { Provider } from 'react-native-paper'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
@@ -27,6 +27,10 @@ export default function App() {
   return (
     <Provider theme={theme}>
       <NavigationContainer>
+        <StatusBar
+          backgroundColor="blue"
+          barStyle="light-content"
+        />
         <Stack.Navigator
           initialRouteName="Dashboard"
           screenOptions={{
