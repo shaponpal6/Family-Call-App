@@ -5,7 +5,8 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "svgr": "npx @svgr/cli -d src/components/Svgs --ignore-existing src/assets/svgs"
   },
   "dependencies": {
     "@react-native-community/masked-view": "0.1.10",
@@ -27,6 +28,8 @@
   },
   "devDependencies": {
     "@babel/core": "~7.9.0",
+    "@svgr/cli": "^6.2.1",
+    "@svgr/core": "^6.2.1",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.15.0",
     "eslint-config-airbnb": "^18.2.1",
