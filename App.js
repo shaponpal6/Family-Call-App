@@ -11,7 +11,9 @@ import {
   RegisterScreen,
   ResetPasswordScreen,
   Dashboard,
+  MessengerScreen,
 } from './src/screens'
+import AudioCallScreen from './src/screens/AudioCallScreen';
 
 const Stack = createStackNavigator()
 const Tab = createBottomTabNavigator();
@@ -24,6 +26,7 @@ function MyTabBar({ state, descriptors, navigation }) {
   );
 }
 export default function App() {
+  const Tab = createBottomTabNavigator();
   return (
     <Provider theme={theme}>
       <NavigationContainer>
@@ -40,6 +43,8 @@ export default function App() {
             headerStyle: { backgroundColor: 'tomato' },
           }}
         >
+          <Stack.Screen name="MessengerScreen" component={MessengerScreen} />
+          <Stack.Screen name="AudioCallScreen" component={AudioCallScreen} />
           <Stack.Screen name="StartScreen" component={StartScreen} />
           <Stack.Screen name="LoginScreen" component={LoginScreen} />
           <Stack.Screen name="RegisterScreen" component={RegisterScreen} />

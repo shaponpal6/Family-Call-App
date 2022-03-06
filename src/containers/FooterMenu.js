@@ -1,32 +1,28 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, Button, Pressable  } from 'react-native'
 import React from 'react'
 import PropTypes from 'prop-types';
 import BackButton from '../components/BackButton'
 import ImageAvatar from '../components/ImageAvatar'
-import {HomeIcon, MessageIcon, CallIcon, ScheduleIcon, SettingsIcon, HistoryIcon} from '../components/Svgs';
+import {HomeIcon, MessageSquareDots, ScheduleIcon, SettingsIcon, HistoryIcon} from '../components/Svgs';
 
 
 const FooterMenu = (props) => {
     console.log('props', props)
   return (
-    <View style={styles.container}>
-        <HomeIcon/>
-        <HistoryIcon/>
-        <MessageIcon/>
-        <ScheduleIcon/>
-        <SettingsIcon/>
+    <View style={styles.container} onPress={()=>props.onNavigate('LoginScreen')}>
+        <Pressable onPress={()=>props.onNavigate('LoginScreen')}><HomeIcon/></Pressable>
+        <Pressable onPress={()=>props.onNavigate('StartScreen')}><ScheduleIcon/></Pressable>
+        <Pressable onPress={()=>props.onNavigate('MessengerScreen')}><MessageSquareDots/></Pressable>
+        <Pressable onPress={()=>props.onNavigate('LoginScreen')}><HistoryIcon/></Pressable>
+        <Pressable onPress={()=>props.onNavigate('RegisterScreen')}><SettingsIcon/></Pressable>
     </View>
   )
 }
 FooterMenu.defaultProps  = {
-    title: "",
-    backButton: false,
-    goBack: null,
+    onNavigate: null,
 }
 FooterMenu.propTypes = {
-    title: PropTypes.string.isRequired,
-    backButton: PropTypes.bool,
-    goBack: PropTypes.func
+    onNavigate: PropTypes.func
   };
 
 export default FooterMenu

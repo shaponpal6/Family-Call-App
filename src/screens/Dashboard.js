@@ -25,11 +25,15 @@ export default function Dashboard({ navigation }) {
     setDataSource(items);
   }, []);
 
+  const onNavigationHandler = (screen) => {
+    console.log('screen', screen)
+    navigation.navigate(screen, { names: ['Brent', 'Satya', 'Michaś'] })
+  }
+
   return (
     <Background>
       <VerticalTopToButtomWraper>
-      <Header title="Family Members" backButton={true} goBack={navigation.goBack}/>
-      
+      <Header title="Family Members" backButton={false} goBack={navigation.goBack}/>
       
       <CustomScrollView>
         <FlatList
@@ -55,7 +59,7 @@ export default function Dashboard({ navigation }) {
           Logout
         </Button>
 
-      <FooterMenu/>
+      <FooterMenu onNavigate={onNavigationHandler}/>
         
       </VerticalTopToButtomWraper>
     </Background>
