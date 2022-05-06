@@ -35,7 +35,7 @@ export default function App() {
           barStyle="light-content"
         />
         <Stack.Navigator
-          initialRouteName="Dashboard"
+          initialRouteName="AudioCallScreen"
           screenOptions={{
             headerShown: false,
             headerMode: 'screen',

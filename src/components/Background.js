@@ -1,8 +1,9 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import { ImageBackground, StyleSheet, KeyboardAvoidingView } from 'react-native'
 import { theme } from '../core/theme'
 
-export default function Background({ children }) {
+export default function Background(props) {
   return (
     <ImageBackground
       source={require('../assets/background_dot.png')}
@@ -10,11 +11,22 @@ export default function Background({ children }) {
       style={styles.background}
     >
       <KeyboardAvoidingView style={styles.container} behavior="padding">
-        {children}
+        {props.children}
       </KeyboardAvoidingView>
     </ImageBackground>
   )
 }
+Background.defaultProps  = {
+  src: '',
+  children: null,
+}
+Background.propTypes = {
+  src: PropTypes.string,
+  children: PropTypes.oneOfType([
+          PropTypes.arrayOf(PropTypes.node),
+          PropTypes.node
+      ]),
+};
 
 const styles = StyleSheet.create({
   background: {
